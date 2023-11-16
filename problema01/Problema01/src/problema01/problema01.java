@@ -4,10 +4,11 @@
  */
 package problema01;
 
- import java.util.Scanner;
-
-
-
+import java.util.Scanner;
+/**
+ *
+ * @author reroes
+ */
 public class problema01 {
 
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class problema01 {
       
         if (num1 > num2) {
            
-            System.out.print("Ingrese la operación a realizar (suma, resta, multiplicacion, division): ");
+            System.out.print("Ingrese la operación a realizar (Suma, Resta, Multiplicacion, Division): ");
             String operacion = scanner.next();
 
             // Realizar la operación
