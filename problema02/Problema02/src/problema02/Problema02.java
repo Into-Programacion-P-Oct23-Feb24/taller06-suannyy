@@ -19,8 +19,8 @@ public class Problema02 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
-        double descuento;
-        double total;
+        double descuento = 0;
+        double total = 0;
 
         System.out.println("Ingrese el propietario del vehiculo");
         String propietario;
@@ -69,10 +69,13 @@ public class Problema02 {
                 System.out.printf("Peaje Buena via\nPropeitario: %s\n"
                         + "Tipo: %s\nValor vehiculo:%.2f\n"
                         + "Peaje:%.2f", propietario, vehiculo, valor, total);
+                
+             
                 break;
             default:
-                System.out.printf("Datos inespecificados");
-                break;
         }
+        System.out.printf("Peaje\"Buena via\"Propietario:%s %s Tipo:%s + "
+                + "valor:%s Peaje:%s",propietario,vehiculo,valor,descuento,total);
+        
     }
 }
