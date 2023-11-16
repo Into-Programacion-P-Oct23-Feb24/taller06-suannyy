@@ -14,7 +14,7 @@ public class problema01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar entrada al usuario
+        
         System.out.print("Ingrese el primer número: ");
         double num1 = scanner.nextDouble();
 
@@ -27,10 +27,9 @@ public class problema01 {
             System.out.print("Ingrese la operación a realizar (Suma, Resta, Multiplicacion, Division): ");
             String operacion = scanner.next();
 
-            // Realizar la operación
             double resultado = realizarOperacion(operacion, num1, num2);
 
-            // Mostrar el resultado
+           
             System.out.println("El resultado de " + operacion + " entre " + num1 + " y " + num2 + " es: " + resultado);
         } else {
             System.out.println("Error: El primer número debe ser mayor al segundo.");

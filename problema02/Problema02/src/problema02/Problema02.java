@@ -5,6 +5,7 @@
 package problema02;
 
 import java.util.Scanner;
+import java.util.Locale;
 
 /**
  *
@@ -16,50 +17,62 @@ public class Problema02 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US);
+        double descuento;
+        double total;
 
-        System.out.print("Ingrese el nombre del propietario: ");
-        String propietario = scanner.nextLine();
+        System.out.println("Ingrese el propietario del vehiculo");
+        String propietario;
+        propietario = entrada.nextLine();
 
-        System.out.print("Ingrese el tipo de vehículo (1-4): ");
-        int tipoVehiculo = scanner.nextInt();
-
-        System.out.print("Ingrese el valor del vehículo: $");
-        double valorVehiculo = scanner.nextDouble();
-
-        double peaje = calcularPeaje(tipoVehiculo, valorVehiculo);
-
-        System.out.println("Peaje \"Buena vía\" Propietario: " + propietario
-                + " Tipo: vehículo " + tipoVehiculo + " Valor: $" + valorVehiculo
-                + " Peaje: $" + peaje);
-    }
-
-    public static double calcularPeaje(int tipoVehiculo, double valorVehiculo) {
-        double porcentaje;
-        double peaje;
-
-        switch (tipoVehiculo) {
-            case 1:
-                porcentaje = 0.01;
-                peaje = porcentaje * valorVehiculo + 2;
+        System.out.println("Ingrese el tipo de vehiculo");
+        String vehiculo;
+        vehiculo = entrada.nextLine();
+        System.out.println("Ingrese el valor de vehiculo");
+        double valor;
+        valor = entrada.nextDouble();
+        vehiculo = vehiculo.toLowerCase();
+        switch (vehiculo) {
+            case "liviano particular":
+            case "liviano":
+            case "particular":
+                descuento = (valor * 0.01) / 100;
+                total = descuento + 2;
+                System.out.printf("Peaje Buena via\nPropeitario: %s\n"
+                        + "Tipo: %s\nValor vehiculo:%.2f\n"
+                        + "Peaje:%.2f", propietario, vehiculo, valor, total);
                 break;
-            case 2:
-                porcentaje = 0.02;
-                peaje = porcentaje * valorVehiculo + 2.5;
+            case "pesado particular":
+            case "pesado":
+            case "grande":
+                descuento = (valor * 0.02) / 100;
+                total = descuento + 2.50;
+                System.out.printf("Peaje Buena via\nPropeitario: %s\n"
+                        + "Tipo: %s\nValor vehiculo:%.2f\n"
+                        + "Peaje:%.2f", propietario, vehiculo, valor, total);
                 break;
-            case 3:
-                porcentaje = 0.04;
-                peaje = porcentaje * valorVehiculo + 1.5;
+            case "taxi":
+
+                descuento = (valor * 0.04) / 100;
+                total = descuento + 1.50;
+                System.out.printf("Peaje Buena via\nPropeitario: %s\n"
+                        + "Tipo: %s\nValor vehiculo:%.2f\n"
+                        + "Peaje:%.2f", propietario, vehiculo, valor, total);
                 break;
-            case 4:
-                porcentaje = 0.05;
-                peaje = porcentaje * valorVehiculo + 2.2;
+            case "bus urbano":
+            case "bus":
+            case "urbano":
+
+                descuento = (valor * 0.05) / 100;
+                total = descuento + 2.20;
+                System.out.printf("Peaje Buena via\nPropeitario: %s\n"
+                        + "Tipo: %s\nValor vehiculo:%.2f\n"
+                        + "Peaje:%.2f", propietario, vehiculo, valor, total);
                 break;
             default:
-                System.out.println("Tipo de vehículo no válido");
-                return 0;
+                System.out.printf("Datos inespecificados");
+                break;
         }
-
-        return peaje;
     }
 }
